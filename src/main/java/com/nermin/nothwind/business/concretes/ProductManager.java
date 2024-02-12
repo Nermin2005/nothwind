@@ -46,20 +46,19 @@ public Result add(Product product) {
         }
     }
 
-
-
-
     @Override
-    public DataResulter<List<Product>> findByIdLessThan(double maxId) {
-
-      List<Product> price= this.productDao.findByIdLessThan(maxId);
-      if(price==null) {
-          return new ErrorDataResult<>("Bele bir netice tapilmadi");
-      }
-      else {
-          return new SuccessDataResult<>("Tapildi", price);
-      }
+    public DataResulter<List<Product>> findByCategoryIdOrderByIdAsc(long categoryId) {
+        List<Product> categoryid= this.productDao.findByCategoryIdOrderByIdAsc(categoryId);
+        if(categoryid==null) {
+            return new ErrorDataResult<>("Bele bir netice tapilmadi");
+        }
+        else {
+            return new SuccessDataResult<>("Tapildi", categoryid);
+        }
     }
+
+
+
 
 
 }

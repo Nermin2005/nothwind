@@ -12,5 +12,8 @@ public interface ProductService {
  DataResulter<List<Product>> findByProductName(String productName);
  DataResulter<List<Product>> findByProductNameAndUnitPrice(String productName, int productPrice);
 
-    DataResulter<List<Product>> findByIdLessThan(double maxId);
+
+    DataResulter<List<Product>> findByCategoryIdOrderByIdAsc(long categoryId);
+
+    // DataResulter<List<Product>> findByIdLessThan(double maxId);
 }

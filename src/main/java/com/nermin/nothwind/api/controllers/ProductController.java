@@ -1,5 +1,6 @@
 package com.nermin.nothwind.api.controllers;
 
+import com.nermin.nothwind.business.abstracts.CategoriesService;
 import com.nermin.nothwind.business.abstracts.ProductService;
 import com.nermin.nothwind.core.utilities.results.DataResulter;
 import com.nermin.nothwind.core.utilities.results.Result;
@@ -36,9 +37,9 @@ public class ProductController  {
         return this.productService.findByProductNameAndUnitPrice(productName,productPrice);
 
     }
-    @GetMapping("/find-by-IdLess")
-    public DataResulter<List<Product>> findByIdLessThan(@RequestParam double maxId) {
-        return productService.findByIdLessThan(maxId);
+    @GetMapping("/find-by-categoryId-LessThan")
+    public DataResulter<List<Product>> findByCategoryIdOrderByIdAsc(@RequestParam long categoryId) {
+        return productService.findByCategoryIdOrderByIdAsc(categoryId);
     }
 
 }
